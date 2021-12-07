@@ -1,7 +1,8 @@
-﻿using UnityEditor;
+﻿using ScriptableEvents;
+using UnityEditor;
 using UnityEngine;
 
-namespace ScriptableEvents.Editor
+namespace _Game.Scripts.ScriptableEvents.Editor
 {
     [CustomEditor(typeof(ScriptableEvent), true)]
     public class ScriptableEventEditor : UnityEditor.Editor

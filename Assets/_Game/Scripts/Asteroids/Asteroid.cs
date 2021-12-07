@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Gameplay
+namespace Asteroids
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public class Asteroid : MonoBehaviour

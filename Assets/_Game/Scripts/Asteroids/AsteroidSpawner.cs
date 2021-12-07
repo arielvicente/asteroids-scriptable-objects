@@ -2,7 +2,7 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Gameplay
+namespace Asteroids
 {
     public class AsteroidSpawner : MonoBehaviour
     {

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using FloatReference = Variables.FloatReference;
 
-namespace Gameplay
+namespace Ship
 {
     public class Health : MonoBehaviour
     {

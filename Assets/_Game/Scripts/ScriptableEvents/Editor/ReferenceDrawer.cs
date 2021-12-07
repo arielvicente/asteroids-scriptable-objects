@@ -1,6 +1,6 @@
 ﻿using UnityEditor;
 
-namespace ScriptableEvents.Editor
+namespace _Game.Scripts.ScriptableEvents.Editor
 {
     //[CustomPropertyDrawer()]
     public class ReferenceDrawer : PropertyDrawer

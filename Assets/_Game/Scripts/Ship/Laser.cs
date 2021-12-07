@@ -1,7 +1,8 @@
+using Asteroids;
 using ScriptableEvents;
 using UnityEngine;
 
-namespace Gameplay
+namespace Ship
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public class Laser : MonoBehaviour

@@ -1,7 +1,7 @@
 using UnityEngine;
 using Variables;
 
-namespace Gameplay
+namespace Ship
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public class Engine : MonoBehaviour

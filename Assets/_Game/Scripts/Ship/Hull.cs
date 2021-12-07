@@ -1,7 +1,7 @@
 using ScriptableEvents;
 using UnityEngine;
 
-namespace Gameplay
+namespace Ship
 {
     public class Hull : MonoBehaviour
     {
