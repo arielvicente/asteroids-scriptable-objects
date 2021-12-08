@@ -6,25 +6,29 @@ namespace UI
 {
     public class UI : MonoBehaviour
     {
-        [Header("Scene References:")] [SerializeField]
-        private TextMeshProUGUI _healthText;
-        
-        [Header("Observables:")]
-        [SerializeField] private FloatObservable _healthObservable;
+        [SerializeField] private TextMeshProUGUI _healthText;
+        [SerializeField] private TextMeshProUGUI _scoreText;
+        [SerializeField] private TextMeshProUGUI _timerText;
+        [SerializeField] private TextMeshProUGUI _laserText;
 
-        private void OnEnable()
+        private void SetHealthText(string text)
         {
-            _healthObservable.Register(OnHealthChanged);
+            _healthText.text = text;
         }
         
-        private void OnDisable()
+        private void SetScoreText(string text)
         {
-            _healthObservable.Unregister(OnHealthChanged);
+            _scoreText.text = text;
         }
         
-        private void OnHealthChanged(float newHealth)
+        private void SetTimerText(string text)
         {
-            _healthText.text = $"Health: {newHealth}";
+            _timerText.text = text;
+        }
+        
+        private void SetLaserText(string text)
+        {
+            _laserText.text = text;
         }
     }
 }
