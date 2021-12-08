@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,8 +9,8 @@ namespace ScriptableEvents
     {
        [SerializeField] private ScriptableEvent _eventNoPayload;
        [SerializeField] private UnityEvent _responseNoPayload;
-        
-        protected virtual void OnEnable()
+
+       protected virtual void OnEnable()
         {
             if (_eventNoPayload == null)
             {

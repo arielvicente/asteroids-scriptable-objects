@@ -1,48 +1,51 @@
 ﻿using System;
+using ScriptableEvents;
+using UnityEngine;
 
 namespace Variables
 {
+    [CreateAssetMenu(fileName = "new FloatVariable", menuName = "Variables/Observables/Float Observable")]
     public class FloatObservable : FloatVariable
     {
-        private event Action<float> _onValueChanged;
-
+        [SerializeField] private ScriptableEventFloat _onValueChanged;
+        
         public override void Set(float value)
         {
-            base.Set(value); 
-            _onValueChanged?.Invoke(Value);
+            base.Set(value);
+            Raise();
         }
-        
+
         public override void Set(FloatVariable variable)
         {
             base.Set(variable);
-            _onValueChanged?.Invoke(Value);
+            Raise();
         }
 
         public override void ApplyChange(float amount)
         {
             base.ApplyChange(amount);
-            _onValueChanged?.Invoke(Value);
+            Raise();
         }
 
         public override void ApplyChange(FloatVariable variable)
         {
             base.ApplyChange(variable);
-            _onValueChanged?.Invoke(Value);
+            Raise();
         }
         
-        public void Raise()
+        private void Raise()
         {
-           _onValueChanged?.Invoke(Value);
+            _onValueChanged.Raise(Value);
         }
-        
-        public void Register(Action<float> onEvent)
+
+        public void Register(Action<float> onValueChanged)
         {
-            _onValueChanged += onEvent;
+            _onValueChanged.Register(onValueChanged);
         }
-        
-        public void Unregister(Action<float> onEvent)
+
+        public void Unregister(Action<float> onValueChanged)
         {
-            _onValueChanged -= onEvent;
+            _onValueChanged.Unregister(onValueChanged);
         }
     }
 }

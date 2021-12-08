@@ -9,22 +9,27 @@ namespace Variables
         [SerializeField] protected bool _useConstant = true;
         [SerializeField] protected T _constantValue;
         [SerializeField] protected TVariable _variable;
-        
-        public T Value 
+
+        public T GetValue()
         {
-            get => _useConstant ? _constantValue : _variable.Value;
-            set
+            return _useConstant ? _constantValue : _variable.Value;
+        }
+        
+        public virtual void SetValue(T value)
+        {
+            if (_useConstant)
             {
-                if (_useConstant)
-                {
-                    _constantValue = value;
-                }
-                else
-                {
-                    _variable.Set(value);
-                }
+                _constantValue = value;
+            }
+            else
+            {
+                _variable.Set(value);
             }
         }
         
+        public virtual void SetValue(TVariable variable)
+        {
+            SetValue(variable.Value);
+        }
     }
 }

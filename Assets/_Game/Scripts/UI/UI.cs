@@ -12,10 +12,16 @@ namespace UI
         [Header("Observables:")]
         [SerializeField] private FloatObservable _healthObservable;
 
-        private void Start()
+        private void OnEnable()
         {
             _healthObservable.Register(OnHealthChanged);
         }
+        
+        private void OnDisable()
+        {
+            _healthObservable.Unregister(OnHealthChanged);
+        }
+        
         private void OnHealthChanged(float newHealth)
         {
             _healthText.text = $"Health: {newHealth}";

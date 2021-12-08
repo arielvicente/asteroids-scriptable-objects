@@ -15,7 +15,7 @@ namespace Variables
         
         public static implicit operator float(FloatReference reference)
         {
-            return reference.Value;
+            return reference.GetValue();
         }
     }
 }
