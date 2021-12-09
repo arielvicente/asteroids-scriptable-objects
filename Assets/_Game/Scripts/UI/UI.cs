@@ -1,6 +1,5 @@
 ﻿using TMPro;
 using UnityEngine;
-using Variables;
 
 namespace UI
 {

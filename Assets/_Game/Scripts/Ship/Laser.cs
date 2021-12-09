@@ -1,5 +1,4 @@
 using Asteroids;
-using ScriptableEvents;
 using UnityEngine;
 
 namespace Ship
@@ -7,10 +6,8 @@ namespace Ship
     [RequireComponent(typeof(Rigidbody2D))]
     public class Laser : MonoBehaviour
     {
-        [SerializeField] private ScriptableEventGuid _shootAsteroidEvent;
-        
-        [SerializeField] private float _speed;
-        [SerializeField] private float _maxLifetime;
+        [SerializeField] private float _speed = 0.2f;
+        [SerializeField] private float _maxLifetime = 3f;
     
         private Rigidbody2D _rigidbody;
         private float _lifetime;
@@ -33,9 +30,6 @@ namespace Ship
             if (string.Equals(other.tag, "Asteroid"))
             {
                 var asteroid = other.GetComponentInParent<Asteroid>();
-                _shootAsteroidEvent.Raise(asteroid.Id);
-                
-                Destroy(gameObject);
             }
         }
 

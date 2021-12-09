@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2970632031999273637}
   - component: {fileID: 2970632031999273638}
   - component: {fileID: 2970632031999273633}
+  - component: {fileID: 6578066716522484772}
   - component: {fileID: 2970632031999273632}
   m_Layer: 0
   m_Name: Ship
@@ -30,7 +31,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2970632032898589615}
   - {fileID: 2970632032652603878}
   - {fileID: 2970632033307266043}
   - {fileID: 3600351306863385139}
@@ -49,14 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ca54af3d6ff174994b183b53e8dc92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _throttlePower:
-    _useConstant: 0
-    _constantValue: 0
-    _variable: {fileID: 11400000, guid: 61d8daaa9a3089d4285de1e601527015, type: 2}
-  _rotationPower:
-    _useConstant: 0
-    _constantValue: 0
-    _variable: {fileID: 11400000, guid: bd753b8c99588c541ba640d318e0cde7, type: 2}
+  _throttlePower: 7
+  _rotationPower: 3
 --- !u!114 &2970632031999273633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,7 +63,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8049130da1c3b374a8385482151b2e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _event: {fileID: 11400000, guid: 3a9b5f1d773392549bbd825d5b5808ca, type: 2}
+--- !u!114 &6578066716522484772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2970632031999273636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24a0cd419e68444499cf96316af2fa39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &2970632031999273632
 Rigidbody2D:
   serializedVersion: 4
@@ -121,7 +126,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 2970632031999273637}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1947438807228636360
 SpriteRenderer:
@@ -202,152 +207,6 @@ PolygonCollider2D:
     - - {x: 1.28, y: -1.28}
       - {x: 0, y: 1.28}
       - {x: -1.28, y: -1.28}
---- !u!1 &2970632032898589614
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2970632032898589615}
-  - component: {fileID: 2970632032898589610}
-  - component: {fileID: 2970632032898589609}
-  - component: {fileID: 2970632032898589608}
-  - component: {fileID: 2970632032898589611}
-  m_Layer: 0
-  m_Name: Ship_Input
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2970632032898589615
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2970632032898589614}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2970632031999273637}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2970632032898589610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2970632032898589614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93b52a14091dd9446b5b77576a9fa058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _eventNoPayload: {fileID: 11400000, guid: aa38c20cc88fda74cbd3b846e9b407ee, type: 2}
-  _responseNoPayload:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2970632031999273638}
-        m_TargetAssemblyTypeName: Gameplay.Engine, Assembly-CSharp
-        m_MethodName: Throttle
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &2970632032898589609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2970632032898589614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93b52a14091dd9446b5b77576a9fa058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _eventNoPayload: {fileID: 11400000, guid: 39402d52d4900504588baa1f67bdbeaf, type: 2}
-  _responseNoPayload:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2970632031999273638}
-        m_TargetAssemblyTypeName: Gameplay.Engine, Assembly-CSharp
-        m_MethodName: SteerLeft
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &2970632032898589608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2970632032898589614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93b52a14091dd9446b5b77576a9fa058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _eventNoPayload: {fileID: 11400000, guid: e96502a0a681d834daf926ab964be8fc, type: 2}
-  _responseNoPayload:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2970632031999273638}
-        m_TargetAssemblyTypeName: Gameplay.Engine, Assembly-CSharp
-        m_MethodName: SteerRight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &2970632032898589611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2970632032898589614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93b52a14091dd9446b5b77576a9fa058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _eventNoPayload: {fileID: 11400000, guid: b162c3aa5dc33c84ea7739ebb1088c4f, type: 2}
-  _responseNoPayload:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2970632033307266020}
-        m_TargetAssemblyTypeName: Gameplay.Gun, Assembly-CSharp
-        m_MethodName: Shoot
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &2970632033307266042
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,7 +236,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2970632031999273637}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2970632033307266020
 MonoBehaviour:
@@ -402,7 +261,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3600351306863385139}
   - component: {fileID: 8326815840096961222}
-  - component: {fileID: 5175897650485569152}
   m_Layer: 0
   m_Name: Ship_Health
   m_TagString: Untagged
@@ -422,7 +280,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2970632031999273637}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8326815840096961222
 MonoBehaviour:
@@ -436,35 +294,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a0cd419e68444499cf96316af2fa39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health:
-    _useConstant: 1
-    _constantValue: 0
-    _variable: {fileID: 0}
---- !u!114 &5175897650485569152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3617658530249206207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93b52a14091dd9446b5b77576a9fa058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _eventNoPayload: {fileID: 11400000, guid: 3a9b5f1d773392549bbd825d5b5808ca, type: 2}
-  _responseNoPayload:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8326815840096961222}
-        m_TargetAssemblyTypeName: Gameplay.Health, Assembly-CSharp
-        m_MethodName: TakeDamage
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
