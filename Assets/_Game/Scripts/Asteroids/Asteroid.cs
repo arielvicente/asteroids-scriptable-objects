@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -7,35 +6,29 @@ namespace Asteroids
     [RequireComponent(typeof(Rigidbody2D))]
     public class Asteroid : MonoBehaviour
     {
-        public Guid Id { get; private set; }
-
-        [Header("Values")]
+        [Header("Config:")]
         [SerializeField] private float _minForce;
         [SerializeField] private float _maxForce;
         [SerializeField] private float _minSize;
         [SerializeField] private float _maxSize;
         [SerializeField] private float _minTorque;
         [SerializeField] private float _maxTorque;
-        [SerializeField] private float _maxLifetime;
 
-        [Header("References")]
+        [Header("References:")]
         [SerializeField] private Transform _shape;
 
         private Rigidbody2D _rigidbody;
-        private float _lifetime;
         private Vector3 _direction;
 
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
-            Id = Guid.NewGuid();
-
+            
             SetDirection();
             AddForce();
             AddTorque();
             SetSize();
         }
-
         private void SetDirection()
         {
             var size = new Vector2(3f, 3f);
@@ -69,25 +62,6 @@ namespace Asteroids
         {
             var size = Random.Range(_minSize, _maxSize);
             _shape.localScale = new Vector3(size, size, 0f);
-        }
-
-        public void OnShootAsteroid(Guid id)
-        {
-            if (id == Id)
-                Destroy(gameObject);
-        }
-
-        private void FixedUpdate()
-        {
-            UpdateLifetime();
-        }
-        
-        private void UpdateLifetime()
-        {
-            _lifetime += Time.fixedDeltaTime;
-
-            if (_lifetime >= _maxLifetime)
-                Destroy(gameObject);
         }
     }
 }

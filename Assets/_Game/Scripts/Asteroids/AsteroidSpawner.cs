@@ -16,7 +16,7 @@ namespace Asteroids
         private float _nextSpawnTime;
         private Camera _camera;
 
-        private enum StartLocation
+        private enum SpawnLocation
         {
             Top,
             Bottom,
@@ -64,50 +64,50 @@ namespace Asteroids
             
             for (var i = 0; i < amount; i++)
             {
-                var location = GetStartLocation();
+                var location = GetSpawnLocation();
                 var position = GetStartPosition(location);
                 Instantiate(_asteroidPrefab, position, Quaternion.identity);
             }
         }
 
-        private static StartLocation GetStartLocation()
+        private static SpawnLocation GetSpawnLocation()
         {
             var roll = Random.Range(0, 4);
 
             return roll switch
             {
-                1 => StartLocation.Bottom,
-                2 => StartLocation.Left,
-                3 => StartLocation.Right,
-                _ => StartLocation.Top
+                1 => SpawnLocation.Bottom,
+                2 => SpawnLocation.Left,
+                3 => SpawnLocation.Right,
+                _ => SpawnLocation.Top
             };
         }
 
-        private Vector3 GetStartPosition(StartLocation startLocation)
+        private Vector3 GetStartPosition(SpawnLocation spawnLocation)
         {
             var pos = new Vector3 { z = Mathf.Abs(_camera.transform.position.z) };
             
             const float padding = 5f;
-            switch (startLocation)
+            switch (spawnLocation)
             {
-                case StartLocation.Top:
+                case SpawnLocation.Top:
                     pos.x = Random.Range(0f, Screen.width);
                     pos.y = Screen.height + padding;
                     break;
-                case StartLocation.Bottom:
+                case SpawnLocation.Bottom:
                     pos.x = Random.Range(0f, Screen.width);
                     pos.y = 0f - padding;
                     break;
-                case StartLocation.Left:
+                case SpawnLocation.Left:
                     pos.x = 0f - padding;
                     pos.y = Random.Range(0f, Screen.height);
                     break;
-                case StartLocation.Right:
+                case SpawnLocation.Right:
                     pos.x = Screen.width - padding;
                     pos.y = Random.Range(0f, Screen.height);
                     break;
                 default:
-                    throw new ArgumentOutOfRangeException(nameof(startLocation), startLocation, null);
+                    throw new ArgumentOutOfRangeException(nameof(spawnLocation), spawnLocation, null);
             }
             
             return _camera.ScreenToWorldPoint(pos);

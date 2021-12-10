@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Ship
@@ -5,8 +6,14 @@ namespace Ship
     public class Gun : MonoBehaviour
     {
         [SerializeField] private Laser _laserPrefab;
-    
-        public void Shoot()
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+                Shoot();
+        }
+        
+        private void Shoot()
         {
             var trans = transform;
             Instantiate(_laserPrefab, trans.position, trans.rotation);

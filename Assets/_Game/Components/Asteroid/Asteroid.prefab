@@ -29,7 +29,6 @@ Transform:
   m_LocalPosition: {x: -2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 368385945655462171}
   - {fileID: 1524412162417054026}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -46,13 +45,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017c14a0b2ceaec4191b684dfd17404f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minForce: 1
-  _maxForce: 4
-  _minSize: 0.1
-  _maxSize: 0.8
+  _minForce: 2
+  _maxForce: 6
+  _minSize: 0.2
+  _maxSize: 1
   _minTorque: 0.1
-  _maxTorque: 0.4
-  _maxLifetime: 10
+  _maxTorque: 0.5
   _shape: {fileID: 1524412162417054026}
 --- !u!50 &1784223117350305362
 Rigidbody2D:
@@ -84,6 +82,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3169066251457290625}
+  - component: {fileID: 3119465934673122495}
   - component: {fileID: 7434321719335165977}
   - component: {fileID: 6355803093840545148}
   m_Layer: 0
@@ -107,6 +106,19 @@ Transform:
   m_Father: {fileID: 1524412162417054026}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3119465934673122495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7041230333510869417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1494e5ca4ea41309c15087d2a3a3507, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _toDestroy: {fileID: 1784223117350305384}
 --- !u!212 &7434321719335165977
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -203,68 +215,5 @@ Transform:
   m_Children:
   - {fileID: 3169066251457290625}
   m_Father: {fileID: 1784223117350305365}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &9087849366630563637
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 368385945655462171}
-  - component: {fileID: 1831581674653676821}
-  m_Layer: 0
-  m_Name: EventListener
-  m_TagString: Asteroid
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &368385945655462171
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9087849366630563637}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1784223117350305365}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1831581674653676821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9087849366630563637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1339bc0ee2ee4fab9b53ffffd3d49f9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _eventNoPayload: {fileID: 0}
-  _responseNoPayload:
-    m_PersistentCalls:
-      m_Calls: []
-  _event: {fileID: 11400000, guid: abd8c9f0722a1584f99564eba2877d72, type: 2}
-  _response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1784223117350305363}
-        m_TargetAssemblyTypeName: Gameplay.Asteroid, Assembly-CSharp
-        m_MethodName: OnShootAsteroid
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
