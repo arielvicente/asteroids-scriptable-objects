@@ -1,3 +1,4 @@
+using System;
 using Asteroids;
 using UnityEngine;
 
@@ -26,7 +27,12 @@ namespace Ship
         {
             if (string.Equals(other.tag, "Asteroid"))
             {
-                
+                // Call event
+                // onLaserHitAsteroidEvent.Raise(indentify)
+                // Listener destroys the asteroid.
+
+                var guid = Guid.NewGuid();
+                // Asteroid (Clone) (1)
             }
         }
     }
