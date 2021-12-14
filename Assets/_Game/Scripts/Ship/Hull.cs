@@ -6,9 +6,10 @@ namespace Ship
 {
     public class Hull : MonoBehaviour
     {
-        [SerializeField] private IntVariable _health;
+        //[SerializeField] private IntVariable _health;
         [SerializeField] private ScriptableEventInt _onHealthChangedEvent;
         [SerializeField] private IntReference _healthRef;
+        [SerializeField] private IntObservable _healthObservable;
         
         private void OnCollisionEnter2D(Collision2D other)
         {
@@ -16,8 +17,9 @@ namespace Ship
             {
                 Debug.Log("Hull collided with Asteroid");
                 // TODO can we bake this into one call?
-                _health.ApplyChange(-1);
-                _onHealthChangedEvent.Raise(_health.Value);
+                //_healthRef.ApplyChange(-1);
+                //_onHealthChangedEvent.Raise(_healthRef);
+                _healthObservable.ApplyChange(-1);
             }
         }
     }

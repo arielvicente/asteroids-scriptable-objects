@@ -13,7 +13,7 @@ namespace Variables
 
         public int Value => _currentValue;
 
-        public void ApplyChange(int change)
+        public virtual void ApplyChange(int change)
         {
             _currentValue += change;
         }

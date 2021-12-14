@@ -63,12 +63,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8049130da1c3b374a8385482151b2e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: {fileID: 11400000, guid: 40cfb1e1b58e0f84a966e03698c56110, type: 2}
   _onHealthChangedEvent: {fileID: 11400000, guid: 1c89cb8edd31962449ecaa94187a07fc, type: 2}
   _healthRef:
-    _intVariable: {fileID: 0}
-    _simpleValue: 0
+    _intVariable: {fileID: 11400000, guid: 40cfb1e1b58e0f84a966e03698c56110, type: 2}
+    _simpleValue: 12
     _useSimple: 0
+  _healthObservable: {fileID: 11400000, guid: a29c193f4c943534ab4728aacaf9839a, type: 2}
 --- !u!114 &6578066716522484772
 MonoBehaviour:
   m_ObjectHideFlags: 0

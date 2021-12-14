@@ -1,5 +1,6 @@
 using System;
 using Asteroids;
+using DefaultNamespace.ScriptableEvents;
 using UnityEngine;
 
 namespace Ship
@@ -7,6 +8,12 @@ namespace Ship
     [RequireComponent(typeof(Rigidbody2D))]
     public class Laser : MonoBehaviour
     {
+        [Header("Events:")]
+        [SerializeField]
+        private ScriptableEventInt _onLaserHitAsteroidEvent;
+        
+        
+        [Header("Values:")]
         [SerializeField] private float _speed = 0.2f;
 
         private Rigidbody2D _rigidbody;
@@ -27,12 +34,9 @@ namespace Ship
         {
             if (string.Equals(other.tag, "Asteroid"))
             {
-                // Call event
-                // onLaserHitAsteroidEvent.Raise(indentify)
-                // Listener destroys the asteroid.
-
-                var guid = Guid.NewGuid();
-                // Asteroid (Clone) (1)
+                var asteroid = other.GetComponentInParent<Asteroid>();
+                var id = asteroid.GetInstanceID();
+                _onLaserHitAsteroidEvent.Raise(id);
             }
         }
     }

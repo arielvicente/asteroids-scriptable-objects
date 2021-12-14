@@ -1,4 +1,5 @@
 using UnityEngine;
+using Variables;
 using Random = UnityEngine.Random;
 
 namespace Asteroids
@@ -19,16 +20,27 @@ namespace Asteroids
 
         private Rigidbody2D _rigidbody;
         private Vector3 _direction;
+        private int _instanceId;
 
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
+            _instanceId = GetInstanceID();
             
             SetDirection();
             AddForce();
             AddTorque();
             SetSize();
         }
+
+        public void OnHitByLaser(IntReference asteroidId)
+        {
+            if (_instanceId == asteroidId.GetValue())
+            {
+                Destroy(gameObject);
+            }
+        }
+        
         private void SetDirection()
         {
             var size = new Vector2(3f, 3f);
