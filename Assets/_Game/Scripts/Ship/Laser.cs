@@ -8,11 +8,6 @@ namespace Ship
     [RequireComponent(typeof(Rigidbody2D))]
     public class Laser : MonoBehaviour
     {
-        [Header("Events:")]
-        [SerializeField]
-        private ScriptableEventInt _onLaserHitAsteroidEvent;
-        
-        
         [Header("Values:")]
         [SerializeField] private float _speed = 0.2f;
 
@@ -28,16 +23,6 @@ namespace Ship
         {
             var trans = transform;
             _rigidbody.MovePosition(trans.position + trans.up * _speed);
-        }
-
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            if (string.Equals(other.tag, "Asteroid"))
-            {
-                var asteroid = other.GetComponentInParent<Asteroid>();
-                var id = asteroid.GetInstanceID();
-                _onLaserHitAsteroidEvent.Raise(id);
-            }
         }
     }
 }

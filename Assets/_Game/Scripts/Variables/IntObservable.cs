@@ -6,7 +6,7 @@ namespace Variables
     [CreateAssetMenu(fileName = "new Int Observable", menuName = "ScriptableObjects/Variables/Int Observable")]
     public class IntObservable : IntVariable
     {
-        [SerializeField] private ScriptableEventInt _onValueChangedEvent;
+        [SerializeField] private ScriptableEventIntReference _onValueChangedEvent;
         
         public override void ApplyChange(int change)
         {

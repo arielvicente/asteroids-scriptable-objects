@@ -7,7 +7,7 @@ namespace Ship
     public class Hull : MonoBehaviour
     {
         //[SerializeField] private IntVariable _health;
-        [SerializeField] private ScriptableEventInt _onHealthChangedEvent;
+        [SerializeField] private ScriptableEventIntReference _onHealthChangedEvent;
         [SerializeField] private IntReference _healthRef;
         [SerializeField] private IntObservable _healthObservable;
         

@@ -1,3 +1,4 @@
+using DefaultNamespace.ScriptableEvents;
 using UnityEngine;
 using Variables;
 using Random = UnityEngine.Random;
@@ -7,6 +8,8 @@ namespace Asteroids
     [RequireComponent(typeof(Rigidbody2D))]
     public class Asteroid : MonoBehaviour
     {
+        [SerializeField] private ScriptableEventInt _onAsteroidDestroyed;
+        
         [Header("Config:")]
         [SerializeField] private float _minForce;
         [SerializeField] private float _maxForce;
@@ -32,10 +35,33 @@ namespace Asteroids
             AddTorque();
             SetSize();
         }
+        
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (string.Equals(other.tag, "Laser"))
+            {
+               HitByLaser();
+            }
+        }
 
+        private void HitByLaser()
+        {
+            _onAsteroidDestroyed.Raise(_instanceId);
+            Destroy(gameObject);
+        }
+
+        // TODO Can we move this to a single listener, something like an AsteroidDestroyer?
         public void OnHitByLaser(IntReference asteroidId)
         {
             if (_instanceId == asteroidId.GetValue())
+            {
+                Destroy(gameObject);
+            }
+        }
+        
+        public void OnHitByLaserInt(int asteroidId)
+        {
+            if (_instanceId == asteroidId)
             {
                 Destroy(gameObject);
             }

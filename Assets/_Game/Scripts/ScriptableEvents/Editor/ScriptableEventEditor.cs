@@ -8,6 +8,7 @@ namespace DefaultNamespace.ScriptableEvents.Editor
     {
         private ScriptableEventBase _target;
         
+        // TODO our editor is not showing? :(
         public override void OnInspectorGUI()
         {
             _target = (ScriptableEventBase)target;

@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _onLaserHitAsteroidEvent: {fileID: 11400000, guid: 16480d846c677a64e941c0e604020cfe, type: 2}
+  _onLaserHitAsteroidEventSimple: {fileID: 11400000, guid: ee3a461d6ac5fb543ba4dcad4a5ce4c8, type: 2}
   _speed: 0.2
 --- !u!50 &5567069101288871500
 Rigidbody2D:
@@ -82,7 +83,7 @@ GameObject:
   - component: {fileID: 2848251788891171716}
   m_Layer: 0
   m_Name: Laser_Sprite
-  m_TagString: Untagged
+  m_TagString: Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

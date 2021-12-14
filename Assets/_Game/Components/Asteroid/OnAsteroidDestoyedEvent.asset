@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 208bed61eab04ed1a207e1bab28f8390, type: 3}
-  m_Name: OnLaserHitAsteroidEvent
+  m_Script: {fileID: 11500000, guid: 2f8554d0707b41ac9d517958c8be2f06, type: 3}
+  m_Name: OnAsteroidDestoyedEvent
   m_EditorClassIdentifier: 

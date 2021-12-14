@@ -1,18 +1,9 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.Events;
-using Variables;
+﻿using UnityEngine.Events;
 
 namespace DefaultNamespace.ScriptableEvents
 {
-    public class ScriptableEventListenerInt : ScriptableEventListener<IntReference, ScriptableEventInt, UnityEvent<IntReference>>
+    public class ScriptableEventListenerInt : ScriptableEventListener<int, ScriptableEventInt, UnityEventInt>
     {
        
-    }
-
-    [Serializable]
-    public class UnityEventInt : UnityEvent<int>
-    {
-        
     }
 }
