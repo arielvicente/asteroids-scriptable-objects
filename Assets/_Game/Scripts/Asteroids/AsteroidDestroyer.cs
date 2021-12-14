@@ -33,7 +33,7 @@ namespace Asteroids
 
         private void DestroyAsteroid(Asteroid asteroid)
         {
-            _asteroids.Remove()
+            //_asteroids.Remove()
         }
     }
 }
