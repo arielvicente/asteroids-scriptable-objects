@@ -49,8 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ca54af3d6ff174994b183b53e8dc92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _throttlePower: 7
-  _rotationPower: 3
+  _throttlePower: {fileID: 11400000, guid: beb4542c9c678f14cb3e3a74aead4314, type: 2}
+  _rotationPower: {fileID: 11400000, guid: eb6f17e4493560c4b9750572ccc4f906, type: 2}
 --- !u!114 &2970632031999273633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,6 +63,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8049130da1c3b374a8385482151b2e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _onHealthChangedEvent: {fileID: 11400000, guid: 1c89cb8edd31962449ecaa94187a07fc, type: 2}
+  _healthRef:
+    _intVariable: {fileID: 11400000, guid: 40cfb1e1b58e0f84a966e03698c56110, type: 2}
+    _simpleValue: 12
+    _useSimple: 0
+  _healthObservable: {fileID: 11400000, guid: a29c193f4c943534ab4728aacaf9839a, type: 2}
 --- !u!114 &6578066716522484772
 MonoBehaviour:
   m_ObjectHideFlags: 0
