@@ -28,4 +28,9 @@ namespace Variables
     {
         
     }
+
+    public class MyIntThingie : VariableBase<int>
+    {
+        
+    }
 }

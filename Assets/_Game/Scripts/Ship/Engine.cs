@@ -9,6 +9,9 @@ namespace Ship
     {
         [SerializeField] private FloatVariable _throttlePower;
         [SerializeField] private FloatVariable _rotationPower;
+        
+        [SerializeField] private float _throttlePowerSimple;
+        [SerializeField] private float _rotationPowerSimple;
 
         private Rigidbody2D _rigidbody;
         
