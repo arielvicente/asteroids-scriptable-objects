@@ -45,8 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfdadedd8a48f2f498bcc3362c739143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onLaserHitAsteroidEvent: {fileID: 11400000, guid: 16480d846c677a64e941c0e604020cfe, type: 2}
-  _onLaserHitAsteroidEventSimple: {fileID: 11400000, guid: ee3a461d6ac5fb543ba4dcad4a5ce4c8, type: 2}
+  _lasers: {fileID: 11400000, guid: 3c49a44c261bb96478bf5d943fa90418, type: 2}
   _speed: 0.2
 --- !u!50 &5567069101288871500
 Rigidbody2D:
