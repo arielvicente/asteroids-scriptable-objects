@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e252628d3d894cf4bca5b27b0beb86e5, type: 3}
   m_Name: LaserRuntimeSet
   m_EditorClassIdentifier: 
+  _lasers: []

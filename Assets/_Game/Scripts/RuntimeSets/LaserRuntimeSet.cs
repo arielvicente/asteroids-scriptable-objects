@@ -8,8 +8,7 @@ namespace RuntimeSets
     [CreateAssetMenu]
     public class LaserRuntimeSet : ScriptableObject
     {
-        // TODO Why to we get type mismatch in the editor?
-        public List<GameObject> _lasers = new List<GameObject>();
+        private readonly List<GameObject> _lasers = new List<GameObject>();
 
         public int Amount => _lasers.Count;
         
